@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>总结一下python爬虫常用的几个库 | dengpeng&#39;s tech blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="说起来，python是我从大学时就开始学习的一门语言，当时实在很反感c的简陋，觉得大蟒蛇才是未来，在无所事事（其实是逃课）的空闲里，就慢慢学习了这门语言，从图书馆借了很多这类的新书（怀念曾经的新书图书馆）。
+后来工作了，略微了解了web开发，又想起了这门课，当时的python书籍还不是那么常见，听说有本python编程金典特别好，但是已经绝版。后来在万能的淘宝找到了影印版，原来的32开本也被复印成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结一下python爬虫常用的几个库">
+<meta property="og:url" content="http://deng-peng.github.io/2015/08/29/总结一下python爬虫常用的几个库/index.html">
+<meta property="og:site_name" content="dengpeng's tech blog">
+<meta property="og:description" content="说起来，python是我从大学时就开始学习的一门语言，当时实在很反感c的简陋，觉得大蟒蛇才是未来，在无所事事（其实是逃课）的空闲里，就慢慢学习了这门语言，从图书馆借了很多这类的新书（怀念曾经的新书图书馆）。
+后来工作了，略微了解了web开发，又想起了这门课，当时的python书籍还不是那么常见，听说有本python编程金典特别好，但是已经绝版。后来在万能的淘宝找到了影印版，原来的32开本也被复印成">
+<meta property="og:updated_time" content="2015-08-31T08:09:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="总结一下python爬虫常用的几个库">
+<meta name="twitter:description" content="说起来，python是我从大学时就开始学习的一门语言，当时实在很反感c的简陋，觉得大蟒蛇才是未来，在无所事事（其实是逃课）的空闲里，就慢慢学习了这门语言，从图书馆借了很多这类的新书（怀念曾经的新书图书馆）。
+后来工作了，略微了解了web开发，又想起了这门课，当时的python书籍还不是那么常见，听说有本python编程金典特别好，但是已经绝版。后来在万能的淘宝找到了影印版，原来的32开本也被复印成">
+  
+    <link rel="alternative" href="/atom.xml" title="dengpeng&#39;s tech blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars2.githubusercontent.com/u/2787748?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">dengpeng</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/deng-peng" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/dengpeng01" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/artisan/" style="font-size: 20px;">artisan</a> <a href="/tags/chrome-extension/" style="font-size: 10px;">chrome extension</a> <a href="/tags/composer/" style="font-size: 10px;">composer</a> <a href="/tags/crawler/" style="font-size: 10px;">crawler</a> <a href="/tags/fis3/" style="font-size: 10px;">fis3</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/frozenui/" style="font-size: 10px;">frozenui</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 20px;">laravel</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">use .Net php html css js python IOS mysql sqlite etc...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">dengpeng</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars2.githubusercontent.com/u/2787748?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">dengpeng</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/deng-peng" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/dengpeng01" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-总结一下python爬虫常用的几个库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/29/总结一下python爬虫常用的几个库/" class="article-date">
+  	<time datetime="2015-08-29T01:14:29.000Z" itemprop="datePublished">2015-08-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      总结一下python爬虫常用的几个库
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/crawler/">crawler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说起来，python是我从大学时就开始学习的一门语言，当时实在很反感c的简陋，觉得大蟒蛇才是未来，在无所事事（其实是逃课）的空闲里，就慢慢学习了这门语言，从图书馆借了很多这类的新书（怀念曾经的新书图书馆）。</p>
+<p>后来工作了，略微了解了web开发，又想起了这门课，当时的python书籍还不是那么常见，听说有本python编程金典特别好，但是已经绝版。后来在万能的淘宝找到了影印版，原来的32开本也被复印成了大16开，现在还记得大概花了56大元买下（2006年）。买后花了个把月通读，遗憾的是，随后的若干年内，都没有迈入web开发的大门。</p>
+<p>书归正传，前段时间使用python做了几个爬虫项目，包括几个新闻站点的内容抓取，股票信息的抓取，以及污染信息的抓取，使用python的原因，主要是因为在linux上部署方便，当然还有丰富的类库资源，下面总结一下最近用到的一些库：</p>
+<ol>
+<li><a href="http://www.python-requests.org/en/latest/" target="_blank" rel="external">requests</a> http请求模拟，除了使用方便外，也可以自定义复杂的header等参数</li>
+<li><a href="https://github.com/gawel/pyquery/" target="_blank" rel="external">pyquery</a> 仿jQuery的一套dom解析库，实际使用发现实现的已经非常全面。这里备选有beautifulsoup和lxml，根据情况选用。</li>
+<li><a href="https://github.com/coleifer/peewee" target="_blank" rel="external">peewee</a> 虽然最开始，我只是把它当做mysql的helper来用，但是这已经是很好的orm框架了，实际使用感觉功能强大，但是我用不了那么多，图方便时使用。 </li>
+<li><a href="http://docs.mongoengine.org" target="_blank" rel="external">mongoengine</a> 算是mongodb的orm，同样在抓取时图方便使用，性能上不太清楚。使用pip安装时会有问题，参见<a href="http://deng-peng.github.io/2015/06/22/mongoengine%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%87%BA%E9%94%99/">mongoengine连接数据库出错</a></li>
+</ol>
+<p>因为涉及到的几个抓取程序都是定时执行，或者一次性执行，并不太考虑持续执行时的性能问题，所以更偏重选择使用简单的库，over。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/08/viewport的那些事/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          viewport的那些事
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/21/一种简易的mysql缓存方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一种简易的mysql缓存方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 dengpeng
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
